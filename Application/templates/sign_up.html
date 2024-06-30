@@ -4,7 +4,7 @@
     <form method="POST" action="">
         {{ form.hidden_tag() }}
         <fieldset class="form-group">
-            <legend class="border-bottom mb-4">Task Space</legend>
+            <legend class="border-bottom mb-4">Plan a Desired Goal Now!</legend>
             <div class="form-group">
                 {{ form.username.label(class="form-control-label") }}
                 {{ form.username(class="form-control form-control-large") }}
@@ -29,7 +29,21 @@
 </div>
 <div class="border-top pt-3">
     <small class="text-muted">
-        Already Have An Account? <a href="{{ url_for('auth.log_in') }}" class="ml-2">Sign In</a>
+        Already Have An Account? <a href="{{ url_for('login') }}" class="ml-2">Sign In</a>
     </small>
 </div>
+<q style="quotes: none;">"planning is the process of thinking about and organizing the activities necessary to achieve a desired"</q>
 {% endblock content %}
+{% block inf %}
+<div class="col-md-4">
+    <div class="content-section">
+      <h4 class="text-muted">About our Application</h4>
+        <ul class="list-group">
+            <a href="#" class="list-group-item list-group-item-action">Notes</a>
+            <a href="#" class="list-group-item list-group-item-action">To Do List</a>
+            <a href="#" class="list-group-item list-group-item-action">Work with Your Team</a>
+            <a href="#" class="list-group-item list-group-item-action">More Soon..&#x1f525 &#x1f525 &#x1f525</a>
+        </ul>
+    </div>
+  </div>
+{% endblock inf %}

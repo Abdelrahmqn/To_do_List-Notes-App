@@ -7,20 +7,20 @@ from Application.models import User, Notes
 @app.route("/")
 @app.route("/home")
 def home():
-    return render_template('home.html')
+    return render_template('home.html', strict_slashes=False)
 
 
 
-@app.route("/sign-up", methods=['GET', 'POST'])
+@app.route("/sign-up", methods=['GET', 'POST'], strict_slashes=False)
 def sign_up():
     form = SignUp()
     if form.validate_on_submit():
         flash(f'Account created for {form.username.data}!', 'success')
         return redirect(url_for('home'))
-    return render_template('sign_up.html', title='Register', form=form)
+    return render_template('sign_up.html', title='Sign Up', form=form)
 
 
-@app.route("/login", methods=['GET', 'POST'], strict_slashes=False)
+@app.route("/login/", methods=['GET', 'POST'])
 def login():
     form = LogIn()
     if form.validate_on_submit():
